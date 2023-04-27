@@ -15,14 +15,21 @@
                 {% for header in headers %}
                 <th>{{ header }}</th>
                 {% endfor %}
+                <th>Open File</th>
             </tr>
         </thead>
         <tbody>
             {% for row in data %}
+
             <tr>
                 {% for cell in row %}
                 <td>{{ cell }}</td>
                 {% endfor %}
+{#              <td>{{ row[5] }}</td>#}
+                <td><a href="file://{{ row[6] }}" target="_blank">Click Here</a></td> <!-- add anchor tag for file URLs -->
+
+{#                <td><a href="{{ row[5] }}" target="_blank"> Click to open </a></td> <!-- add anchor tag for website URLs -->#}
+
             </tr>
             {% endfor %}
         </tbody>
